@@ -21,7 +21,7 @@ public class DiscordApplicationCommands {
        this.commandManager = new CommandManager();
     }
     public void registerDiscordApplicationCommands(){
-        commandManager.register("!ping", ((member, event) ->
+        commandManager.register("!05022002suporte", ((member, event) ->
         {
             final MessageChannel textChannel = event.getChannel();
 
@@ -29,29 +29,22 @@ public class DiscordApplicationCommands {
                     new GenesisTicketMessageEmbed();
             genesisTicketMessageEmbed.generateGenesisTicketMessageEmbed(event.getChannel());
 
-            textChannel.sendMessageEmbeds(genesisTicketMessageEmbed).setActionRow(StringSelectMenu.
+        }));
+        commandManager.register("!05022002service", ((member, event) ->
+        {
+            event.getChannel().sendMessage("Olá, invocador! Qual serviço deseja realizar?").setActionRow(StringSelectMenu.
                     create("choose-service")
                     .addOptions(SelectOption.of("Escolha como ganhar dinheiro!", "default").withDefault(true).withDescription("Ganhe dólares e euros jogando League of Legends na Genesis service!")
-                                    .withEmoji(Emoji.fromUnicode("\uD83D\uDCB7")),SelectOption.of("Handleveling", "handleveling-service") // another way to create a SelectOption
-                            .withDescription("Ganhe dinheiro jogando URF, ARAM e modos especiais!")
-                            .withEmoji(Emoji.fromUnicode("\uD83D\uDCB9")),
+                                    .withEmoji(Emoji.fromUnicode("\uD83D\uDCB7")),SelectOption.of("Leveling",
+                                            "leveling-service") // another way to create a SelectOption
+                                    .withDescription("Ganhe dinheiro jogando URF, ARAM e modos especiais!")
+                                    .withEmoji(Emoji.fromUnicode("\uD83D\uDCB9")),
                             SelectOption.of("Derank", "derank-service")
-                            .withDescription("Ganhe dinheiro perdendo partidas ranqueadas!").withEmoji(Emoji.fromUnicode("\uD83D\uDCC9")),
+                                    .withDescription("Ganhe dinheiro perdendo partidas ranqueadas!").withEmoji(Emoji.fromUnicode("\uD83D\uDCC9")),
                             SelectOption.of("Cashflow", "cashflow-service")
-                                    .withDescription("Ganhe euro e dólares jogando partidas ranqueadas!")
+                                    .withDescription("Ganhe dólares jogando partidas ranqueadas!")
                                     .withEmoji(Emoji.fromUnicode("\uD83D\uDE80")))
-                    .build());
-
-
-
-
-
-
-
-
-
-
-
+                    .build()).queue();
         }));
     }
 }
