@@ -39,7 +39,7 @@ public final class GenesisServiceBot {
                     .enableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE)
                     .disableCache(CacheFlag.ACTIVITY, CacheFlag.CLIENT_STATUS, CacheFlag.ONLINE_STATUS)
                     .enableIntents(GatewayIntent.MESSAGE_CONTENT)
-                    .setActivity(Activity.playing("Genesis Service"))
+                    .setActivity(Activity.playing("Season 2023"))
                     .addEventListeners(commandManager, new ButtonListenerAdapter())
                     .setBulkDeleteSplittingEnabled(true)
                     .build();
