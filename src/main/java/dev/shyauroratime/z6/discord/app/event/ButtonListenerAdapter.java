@@ -72,7 +72,8 @@ public class ButtonListenerAdapter extends ListenerAdapter {
             Role role = event.getGuild().getRoleById(roleId);
             event.getGuild().addRoleToMember(user, role).queue();
         }
-        event.reply("Seja bem-vindo a Genesis, seu cargo foi adicionado!").setEphemeral(true).queue();
+        //Seja bem-vindo à Genesis! Seu cargo foi adicionado, ele te dá acesso aos canais relacionados ao serviço que você escolheu, vamos dar uma olhada?
+        event.reply("Seja bem-vindo à Genesis! Seu cargo foi adicionado, ele te dá acesso aos canais relacionados ao serviço que você escolheu, vamos dar uma olhada? \nSe precisar de ajuda humana não hesite em chamar nossos administradores!\n\nBoa jornada, te desejo toda boa sorte que um robô pode desejar!").setEphemeral(true).queue();
 
     }
     @Override
